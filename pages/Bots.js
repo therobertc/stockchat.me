@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Feed from "../components/Feed";
-import Card from "./Card";
 
 export default function Bots() {
   return (
