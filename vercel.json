@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "https://botapi-seven.vercel.app/tweet",
+      "source": "https://stockchat.me/",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
