@@ -1,12 +1,12 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
+import Feed from "../components/Feed";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>STOCKCHAT</title>
+        <title>Stockchat</title>
         <meta name="description" content="Group chats with your friends" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -30,32 +30,20 @@ export default function Home() {
         </body>
 
         <div style={{ flexDirection: "row", display: "flex" }}>
-          <Link href="/Home">
-            <a
-              style={{
-                fontWeight: 500,
-                fontSize: 20,
-                paddingRight: 20,
-                color: "#657786",
-              }}
-            >
-              🏠 Home
-            </a>
-          </Link>
-
-          <Link href="/Bots">
-            <a
-              style={{
-                fontWeight: 500,
-                fontSize: 20,
-                paddingRight: 20,
-                color: "#657786",
-              }}
-            >
-              🤖 Bots
-            </a>
-          </Link>
-          {/* <a
+          <a
+            href="https://twitter.com/stockchatme"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontWeight: 500,
+              fontSize: 20,
+              paddingRight: 20,
+              color: "#657786",
+            }}
+          >
+            💸 Subscribe
+          </a>
+          <a
             href="https://twitter.com/stockchatme"
             target="_blank"
             rel="noopener noreferrer"
@@ -67,7 +55,7 @@ export default function Home() {
             }}
           >
             🐦 Twitter
-          </a> */}
+          </a>
           <a
             href="mailto:stockchatapp@gmail.com"
             target="_blank"
@@ -84,34 +72,8 @@ export default function Home() {
         </div>
       </div>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Stocks and Crypto with friends <br></br>💬 💸 ✨
-        </h1>
-
-        <a
-          href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            backgroundColor: "#147efb",
-            borderRadius: 20,
-            padding: 0.5,
-            margin: 30,
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 4,
-            },
-            shadowOpacity: 0.5,
-            shadowRadius: 5.46,
-            elevation: 9,
-          }}
-        >
-          <div>
-            <img src="../app-store-button.svg" alt="next" />
-          </div>
-        </a>
+      <main style={{ width: "50%" }}>
+        <Feed></Feed>
       </main>
 
       <footer className={styles.footer}>
