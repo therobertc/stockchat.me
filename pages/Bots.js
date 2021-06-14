@@ -79,7 +79,7 @@ export default function Bots() {
 
       <div style={{ paddingBottom: 20 }}>
         <body style={{ textAlign: "center", fontSize: 30, fontWeight: "500" }}>
-          Add Bots to your Discord Server
+          Add Bots to your Group Chat
         </body>
         <p style={{ fontSize: 20, fontWeight: "500", textAlign: "center" }}>
           Bots help your trading group stay active and up to date with real-time

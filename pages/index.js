@@ -12,26 +12,28 @@ export default function Home() {
       </Head>
 
       <div
-        style={{
-          justifyContent: "space-between",
-          flexDirection: "row",
-          display: "flex",
-          flex: 1,
-          width: "100%",
-          paddingLeft: 30,
-          paddingRight: 30,
-          paddingTop: 20,
-        }}
+        style={
+          {
+            // justifyContent: "space-between",
+            // flexDirection: "row",
+            // display: "flex",
+            // flex: 1,
+            // width: "100%",
+            // paddingLeft: 30,
+            // paddingRight: 30,
+            // paddingTop: 20,
+          }
+        }
       >
         {/* <img width={250} height={50} src="../logo.png" alt="next" /> */}
         {/* <h1 style={{ textAlign: "left" }}> Search</h1> */}
-        <body style={{ textAlign: "left", fontSize: 30, fontWeight: "bold" }}>
+        {/* <body style={{ textAlign: "left", fontSize: 30, fontWeight: "bold" }}>
           💬 stockchat
-        </body>
+        </body> */}
 
-        <div style={{ flexDirection: "row", display: "flex" }}>
+        {/* <div style={{ flexDirection: "row", display: "flex" }}>
           <Link href="/Home">
-            <a
+            <body
               style={{
                 fontWeight: 500,
                 fontSize: 20,
@@ -40,7 +42,7 @@ export default function Home() {
               }}
             >
               🏠 Home
-            </a>
+            </body>
           </Link>
 
           <Link href="/Bots">
@@ -68,7 +70,7 @@ export default function Home() {
           >
             🐦 Twitter
           </a> */}
-          <a
+        {/* <a
             href="mailto:stockchatapp@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -81,12 +83,13 @@ export default function Home() {
           >
             📮 Contact
           </a>
-        </div>
+          </div> */}
       </div>
 
       <main className={styles.main}>
+        <h1 className={styles.logo}>Stock Chat</h1>
         <h1 className={styles.title}>
-          Stocks and Crypto with friends <br></br>💬 💸 ✨
+          Group Messaging for Investors <br></br>💬 💸 ✨
         </h1>
 
         <a
