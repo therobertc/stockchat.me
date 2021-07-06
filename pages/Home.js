@@ -23,11 +23,11 @@ export default function Home() {
           paddingTop: 20,
         }}
       >
-        {/* <img width={250} height={50} src="../logo.png" alt="next" /> */}
+        <img width={250} height={50} src="../logotext.png" alt="next" />
         {/* <h1 style={{ textAlign: "left" }}> Search</h1> */}
-        <body style={{ textAlign: "left", fontSize: 30, fontWeight: "bold" }}>
+        {/* <body style={{ textAlign: "left", fontSize: 30, fontWeight: "bold" }}>
           💬 stockchat
-        </body>
+        </body> */}
 
         <div style={{ flexDirection: "row", display: "flex" }}>
           <a
