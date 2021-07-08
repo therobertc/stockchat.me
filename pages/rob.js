@@ -277,7 +277,14 @@ export default function Features() {
               margin: 10,
             }}
           >
-            <p style={{ textAlign: "center", fontSize: 20, lineHeight: 0.1 }}>
+            <p
+              style={{
+                textAlign: "center",
+                fontSize: 20,
+                lineHeight: 0.1,
+                fontFamily: "monospace",
+              }}
+            >
               Tier 1
             </p>
             <p style={{ textAlign: "center", fontSize: 30, lineHeight: 0.1 }}>
