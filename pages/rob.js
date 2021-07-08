@@ -202,14 +202,15 @@ export default function Features() {
           <div
             style={{
               backgroundColor: "blue",
-              height: 80,
+              height: 50,
               width: 250,
-              borderRadius: 30,
+              borderRadius: 25,
               justifyContent: "center",
               alignItems: "center",
               flex: 1,
               display: "flex",
               margin: 10,
+              padding: 20,
             }}
           >
             <a
@@ -275,6 +276,8 @@ export default function Features() {
               justifyContent: "center",
               alignItems: "center",
               margin: 10,
+              borderColor: "blue",
+              borderWidth: 2,
             }}
           >
             <p
@@ -369,7 +372,7 @@ export default function Features() {
               flex: 1,
               display: "flex",
               margin: 10,
-              //padding: 30,
+              padding: 20,
             }}
           >
             <a
