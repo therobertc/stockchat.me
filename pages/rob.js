@@ -361,7 +361,7 @@ export default function Features() {
           <div
             style={{
               backgroundColor: "blue",
-              height: 100,
+              height: 50,
               width: 250,
               borderRadius: 25,
               justifyContent: "center",
@@ -369,7 +369,7 @@ export default function Features() {
               flex: 1,
               display: "flex",
               margin: 10,
-              padding: 30,
+              //padding: 30,
             }}
           >
             <a
