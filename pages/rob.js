@@ -245,7 +245,7 @@ export default function Features() {
           <img
             width={80}
             height={80}
-            style={{ borderRadius: 40, marginTop: 50 }}
+            style={{ borderRadius: 40, marginTop: 20 }}
             src="../rob.png"
             alt="next"
           />
@@ -255,8 +255,8 @@ export default function Features() {
               color: "#FFF",
               fontSize: 30,
               fontFamily: "monospace",
-              marginBottom: 50,
-              flex: 1,
+              marginBottom: 20,
+              //flex: 1,
 
               fontWeight: 800,
             }}
@@ -356,7 +356,7 @@ export default function Features() {
               backgroundColor: "blue",
               height: 100,
               width: 250,
-              borderRadius: 30,
+              borderRadius: 25,
               justifyContent: "center",
               alignItems: "center",
               flex: 1,
