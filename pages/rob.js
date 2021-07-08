@@ -36,9 +36,9 @@ export default function Features() {
       }}
     >
       <Head>
-        <title>STOCKCHAT</title>
+        <title>Follow @Rob on StockChat</title>
         <meta name="description" content="Group chats with your friends" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/rob.png" />
       </Head>
 
       <Desktop>
