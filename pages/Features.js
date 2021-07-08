@@ -21,7 +21,7 @@ const Default = ({ children }) => {
   return isNotMobile ? children : null;
 };
 
-export default function Home() {
+export default function Features() {
   return (
     <div
       style={{
@@ -39,10 +39,6 @@ export default function Home() {
         <title>STOCKCHAT</title>
         <meta name="description" content="Group chats with your friends" />
         <link rel="icon" href="/favicon.ico" />
-        {/* <script
-          async
-          src="https://unpkg.com/emojisplosion/lib/easy.js"
-        ></script> */}
       </Head>
 
       <Desktop>
@@ -59,83 +55,9 @@ export default function Home() {
             backgroundColor: "#000",
           }}
         >
-          {/* <body style={{ textAlign: "left", fontSize: 30, fontWeight: "bold" }}>
-            💬 stockchat
-          </body> */}
           <img width={250} height={50} src="../logotext.png" alt="next" />
 
-          <div
-            style={{
-              flexDirection: "row",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {/* <Link href="/Home">
-              <body
-                style={{
-                  fontWeight: 500,
-                  fontSize: 20,
-                  paddingRight: 20,
-                  color: "#FFF",
-                }}
-              >
-                🏠 Home
-              </body>
-            </Link> */}
-
-            {/* <Link href="/Subscribe">
-              <body
-                style={{
-                  fontWeight: 500,
-                  fontSize: 20,
-                  paddingRight: 20,
-                  color: "#FFF",
-                }}
-              >
-                💸 Subscribe
-              </body>
-            </Link> */}
-
-            {/* <Link href="/Bots">
-              <a
-                style={{
-                  fontWeight: 500,
-                  fontSize: 20,
-                  paddingRight: 20,
-                  color: "#FFF",
-                }}
-              >
-                Discord Bots
-              </a>
-            </Link> */}
-
-            {/* <Link href="/Bots">
-              <a
-                style={{
-                  fontWeight: 500,
-                  fontSize: 20,
-                  paddingRight: 20,
-                  color: "#FFF",
-                }}
-              >
-                API Documentation
-              </a>
-            </Link> */}
-            {/* <Link href="/Features">
-              <a
-                style={{
-                  fontWeight: 500,
-                  fontSize: 20,
-                  paddingRight: 20,
-                  color: "#FFF",
-                }}
-              >
-                Features
-              </a>
-            </Link> */}
-
+          <div>
             <div
               style={{
                 backgroundColor: "blue",
@@ -162,75 +84,26 @@ export default function Home() {
                 ✨ Get StockChat
               </a>
             </div>
-
-            {/* <a
-              href="https://twitter.com/stockchatme"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontWeight: 500,
-                fontSize: 20,
-                paddingRight: 20,
-                color: "#FFF",
-              }}
-            >
-              🐦 Twitter
-            </a> */}
-            {/* <a
-              href="mailto:stockchatapp@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontWeight: 500,
-                fontSize: 20,
-                paddingRight: 20,
-                color: "#FFF",
-              }}
-            >
-              📮 Contact
-            </a> */}
           </div>
         </div>
 
-        <main className={styles.main}>
+        <div style={{}}>
           <p
             style={{
               color: "#FFF",
               fontSize: 60,
               fontFamily: "monospace",
               marginBottom: 50,
-              textAlign: "center",
+              flex: 1,
+
               fontWeight: 800,
             }}
           >
-            Group Messaging for Investors
+            Features
           </p>
-          <p className={styles.title}>💬 💸 💎 🙌 </p>
 
-          <a
-            href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              backgroundColor: "blue",
-              borderRadius: 20,
-              padding: 0.5,
-              margin: 30,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 4,
-              },
-              shadowOpacity: 0.5,
-              shadowRadius: 5.46,
-              elevation: 9,
-            }}
-          >
-            <div>
-              <img src="../app-store-button.svg" alt="next" />
-            </div>
-          </a>
-        </main>
+          <p className={styles.title}>💬 💸 💎 🙌 </p>
+        </div>
 
         <footer className={styles.footer}>
           <a
@@ -259,19 +132,6 @@ export default function Home() {
           >
             Group Messaging for Investors
           </p>
-
-          {/* <p
-            style={{
-              color: "#FFF",
-              fontSize: 20,
-              fontFamily: "monospace",
-              //marginBottom: 50,
-              textAlign: "center",
-              fontWeight: 800,
-            }}
-          >
-            Built with Lightning ⚡️
-          </p> */}
 
           <p style={{ fontSize: 30, lineHeight: 0.1 }}> 💬 💸 💎 🙌 </p>
 
