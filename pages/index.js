@@ -36,9 +36,9 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>STOCKCHAT</title>
+        <title>#STOCKCHAT</title>
         <meta name="description" content="Group chats with your friends" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" />
         {/* <script
           async
           src="https://unpkg.com/emojisplosion/lib/easy.js"
