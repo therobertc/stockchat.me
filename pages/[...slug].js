@@ -1,8 +1,11 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-
+import axios from "axios";
 import { useMediaQuery } from "react-responsive";
+import React,{useState} from 'react';
+import { useRouter } from 'next/router'
+import { Profiler } from "react";
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -21,7 +24,10 @@ const Default = ({ children }) => {
   return isNotMobile ? children : null;
 };
 
-export default function Features() {
+const Profile = ({data}) => {
+  const router = useRouter();
+  const slug = router.query.slug || [];
+
   return (
     <div
       style={{
@@ -36,9 +42,9 @@ export default function Features() {
       }}
     >
       <Head>
-        <title>Follow @Rob on StockChat</title>
+        <title>Follow @{data.data ? data.data.username : ""} on StockChat</title>
         <meta name="description" content="Group chats with your friends" />
-        <link rel="icon" href="/rob.png" />
+        <link rel="icon" href={data.data? data.data.profile_image :""} />
       </Head>
 
       <Desktop>
@@ -94,7 +100,7 @@ export default function Features() {
             width={80}
             height={80}
             style={{ borderRadius: 40, marginTop: 10 }}
-            src="../rob.png"
+            src={data.data? data.data.profile_image :""}
             alt="next"
           />
 
@@ -109,7 +115,7 @@ export default function Features() {
               fontWeight: 800,
             }}
           >
-            @ROB
+            @{data.data ? data.data.username : ""} 
           </p>
 
           <div
@@ -241,13 +247,13 @@ export default function Features() {
       </Desktop>
       <Mobile>
         <main className={styles.main}>
-          <img width={250} height={50} src="../logotext.png" alt="next" />
+          <img width={250} height={50} src={data.data ? data.data.profile_image:""} alt="next" />
 
           <img
             width={80}
             height={80}
             style={{ borderRadius: 40, marginTop: 20 }}
-            src="../rob.png"
+            src={data.data? data.data.profile_image:""}
             alt="next"
           />
 
@@ -262,7 +268,7 @@ export default function Features() {
               fontWeight: 800,
             }}
           >
-            @ROB
+            @{data.data ? data.data.username : ""}
           </p>
 
           <div
@@ -405,3 +411,13 @@ export default function Features() {
     </div>
   );
 }
+
+export const getServerSideProps = async (context) => {
+  const res = await fetch(`https://sharestock.io/api/stockchat/user-profile/?user=${context.params.slug}`);
+  const json = await res.json();
+  return { props: {data:json }};
+};
+
+
+export default Profile;
+
