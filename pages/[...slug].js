@@ -377,7 +377,7 @@ const Profile = ({ data }) => {
               borderRadius: 25,
               justifyContent: "center",
               alignItems: "center",
-              flex: 1,
+              //flex: 1,
               display: "flex",
               margin: 10,
               padding: 20,
@@ -394,7 +394,7 @@ const Profile = ({ data }) => {
                 color: "#FFF",
               }}
             >
-              ✨ Subscribe
+              ✨ Coming Soon
             </a>
           </div>
         </main>
