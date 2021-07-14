@@ -120,7 +120,7 @@ const Profile = ({ data }) => {
             @{data.data ? data.data.username : ""}
           </p>
 
-          <div
+          {/* <div
             style={{
               width: 250,
               height: 100,
@@ -140,9 +140,9 @@ const Profile = ({ data }) => {
               {" "}
               💬 💸 💎 🙌{" "}
             </p>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             style={{
               width: 250,
               height: 100,
@@ -176,9 +176,9 @@ const Profile = ({ data }) => {
               {" "}
               💬 💸 💎 🙌{" "}
             </p>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             style={{
               width: 250,
               height: 100,
@@ -205,7 +205,7 @@ const Profile = ({ data }) => {
               {" "}
               💬 💸 💎 🙌{" "}
             </p>
-          </div>
+          </div> */}
 
           <div
             style={{
@@ -273,7 +273,7 @@ const Profile = ({ data }) => {
             @{data.data ? data.data.username : ""}
           </p>
 
-          <div
+          {/* <div
             style={{
               width: 250,
               height: 100,
@@ -302,9 +302,9 @@ const Profile = ({ data }) => {
               {" "}
               💬 💸 💎 🙌{" "}
             </p>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             style={{
               width: 250,
               height: 100,
@@ -338,9 +338,9 @@ const Profile = ({ data }) => {
               {" "}
               💬 💸 💎 🙌{" "}
             </p>
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             style={{
               width: 250,
               height: 100,
@@ -367,7 +367,7 @@ const Profile = ({ data }) => {
               {" "}
               💬 💸 💎 🙌{" "}
             </p>
-          </div>
+          </div> */}
 
           <div
             style={{
