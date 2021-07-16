@@ -168,8 +168,8 @@ const CheckoutForm = () => {
         Payment successful
       </div>
       <div className="MResultMessage">
-        Thanks for joining StockChat. No money was charged, but we generated a
-        payment method for you.
+        Thanks for joining StockChat. Open the app to get started.
+        https://stockchat.me
         {/* PaymentMethod: {paymentMethod.id} */}
       </div>
       <ResetButton onClick={reset} />
@@ -225,7 +225,7 @@ const CheckoutForm = () => {
       </fieldset>
       {error && <ErrorMessage>{error.message}</ErrorMessage>}
       <SubmitButton processing={processing} error={error} disabled={!stripe}>
-        Pay $25 / Month
+        Pay $45 / Month
       </SubmitButton>
     </form>
   );
