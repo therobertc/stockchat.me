@@ -169,7 +169,7 @@ const CheckoutForm = () => {
       </div>
       <div className="ResultMessage">
         Thanks for joining StockChat. No money was charged, but we generated a
-        payment methon for you.
+        payment method for you.
         {/* PaymentMethod: {paymentMethod.id} */}
       </div>
       <ResetButton onClick={reset} />
