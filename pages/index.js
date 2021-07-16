@@ -231,6 +231,38 @@ export default function Home() {
           </a>
         </main>
 
+        <div style={{ justifyContent: "flex-end", alignSelf: "flex-end" }}>
+          <div
+            style={{
+              backgroundColor: "blue",
+              height: 50,
+              width: 50,
+              borderRadius: 25,
+              justifyContent: "center",
+              alignItems: "center",
+              flex: 1,
+              display: "flex",
+            }}
+          >
+            <a
+              href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontWeight: 600,
+                fontSize: 30,
+                justifyContent: "center",
+                alignSelf: "center",
+                textAlign: "center",
+
+                color: "#FFF",
+              }}
+            >
+              💬
+            </a>
+          </div>
+        </div>
+
         <footer className={styles.footer}>
           <a
             href="https://twitter.com/stockchatme"

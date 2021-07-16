@@ -6,6 +6,150 @@ import { useMediaQuery } from "react-responsive";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Profiler } from "react";
+import {
+  Elements,
+  CardElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+import PaymentsForm from "../components/PaymentsForm";
+import MobilePaymentsForm from "../components/MobilePaymentsForm";
+
+const stripePromise = loadStripe("pk_test_g1bJ2jBaMjtb34TFV2BQNaip00GpsUf1Na");
+
+const handleSubmit = (stripe, elements) => async () => {
+  const cardElement = elements.getElement(CardElement);
+
+  const { error, paymentMethod } = await stripe.createPaymentMethod({
+    type: "card",
+    card: cardElement,
+  });
+
+  if (error) {
+    console.log("[error]", error);
+  } else {
+    console.log("[PaymentMethod]", paymentMethod);
+    // ... SEND to your API server to process payment intent
+  }
+};
+
+const CARD_OPTIONS = {
+  iconStyle: "solid",
+  style: {
+    base: {
+      iconColor: "#c4f0ff",
+      color: "#fff",
+      fontWeight: 500,
+      fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+      fontSize: "16px",
+      fontSmoothing: "antialiased",
+      ":-webkit-autofill": {
+        color: "#fce883",
+      },
+      "::placeholder": {
+        color: "#87bbfd",
+      },
+    },
+    invalid: {
+      iconColor: "#ffc7ee",
+      color: "#ffc7ee",
+    },
+  },
+};
+
+// const PaymentForm = () => {
+//   const stripe = useStripe();
+//   const elements = useElements();
+//   return (
+//     <>
+//       <div>
+//         <div
+//           style={{
+//             backgroundColor: "#FFF",
+//             padding: 20,
+//             fontSize: 30,
+//             width: "100%",
+//           }}
+//         >
+//           <CardElement
+//             options={{
+//               style: {
+//                 base: {
+//                   fontSize: "16px",
+//                   flex: 1,
+//                   display: "flex",
+//                   width: "800px",
+
+//                   color: "#424770",
+//                   "::placeholder": {
+//                     color: "#aab7c4",
+//                   },
+//                 },
+//                 invalid: {
+//                   color: "#9e2146",
+//                 },
+//               },
+//             }}
+//           />
+//         </div>
+//         <button
+//           style={{
+//             backgroundColor: "blue",
+//             height: 50,
+//             width: 200,
+//             borderRadius: 30,
+//             justifyContent: "center",
+//             alignItems: "center",
+//             flex: 1,
+//             display: "flex",
+//             fontWeight: 600,
+//             fontSize: 20,
+
+//             color: "#FFF",
+//           }}
+//           onClick={handleSubmit(stripe, elements)}
+//         >
+//           ✨ Subscribe
+//         </button>
+
+//         {/* <div
+//           style={{
+//             backgroundColor: "blue",
+//             height: 50,
+//             width: 200,
+//             borderRadius: 30,
+//             justifyContent: "center",
+//             alignItems: "center",
+//             flex: 1,
+//             display: "flex",
+//           }}
+//         >
+//           <a
+//             href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             style={{
+//               fontWeight: 600,
+//               fontSize: 20,
+
+//               color: "#FFF",
+//             }}
+//           >
+//             ✨ Subscribe
+//           </a>
+//         </div> */}
+//       </div>
+//     </>
+//   );
+// };
+
+// const StripePaymentForm = () => (
+//   <Elements stripe={stripePromise}>
+//     <PaymentForm />
+//   </Elements>
+// );
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -66,7 +210,7 @@ const Profile = ({ data }) => {
           <img width={250} height={50} src="../logotext.png" alt="next" />
 
           <div>
-            <div
+            {/* <div
               style={{
                 backgroundColor: "blue",
                 height: 50,
@@ -91,7 +235,7 @@ const Profile = ({ data }) => {
               >
                 ✨ Subscribe
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -120,94 +264,9 @@ const Profile = ({ data }) => {
             @{data.data ? data.data.username : ""}
           </p>
 
-          {/* <div
-            style={{
-              width: 250,
-              height: 100,
-              borderRadius: 25,
-              borderColor: "#FFF",
-              borderWidth: 1,
-              backgroundColor: "#FFF",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: 10,
-            }}
-          >
-            <p style={{ textAlign: "center", fontSize: 20, lineHeight: 0.1 }}>
-              Tier 1
-            </p>
-            <p style={{ textAlign: "center", fontSize: 30, lineHeight: 0.1 }}>
-              {" "}
-              💬 💸 💎 🙌{" "}
-            </p>
-          </div> */}
+          <PaymentsForm></PaymentsForm>
 
           {/* <div
-            style={{
-              width: 250,
-              height: 100,
-              borderRadius: 25,
-              borderColor: "#FFF",
-              borderWidth: 1,
-              backgroundColor: "#FFF",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: 10,
-            }}
-          >
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: 20,
-                lineHeight: 0.1,
-                fontFamily: "monospace",
-              }}
-            >
-              Tier 2
-            </p>
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: 30,
-                lineHeight: 0.1,
-                fontFamily: "monospace",
-              }}
-            >
-              {" "}
-              💬 💸 💎 🙌{" "}
-            </p>
-          </div> */}
-
-          {/* <div
-            style={{
-              width: 250,
-              height: 100,
-              borderRadius: 25,
-              borderColor: "#FFF",
-              borderWidth: 1,
-              backgroundColor: "#FFF",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: 10,
-            }}
-          >
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: 20,
-                lineHeight: 0.1,
-                fontFamily: "monospace",
-              }}
-            >
-              Tier 3
-            </p>
-            <p style={{ textAlign: "center", fontSize: 30, lineHeight: 0.1 }}>
-              {" "}
-              💬 💸 💎 🙌{" "}
-            </p>
-          </div> */}
-
-          <div
             style={{
               backgroundColor: "blue",
               height: 50,
@@ -234,7 +293,7 @@ const Profile = ({ data }) => {
             >
               ✨ Subscribe
             </a>
-          </div>
+          </div> */}
         </main>
         <footer className={styles.footer}>
           <a
@@ -369,7 +428,8 @@ const Profile = ({ data }) => {
             </p>
           </div> */}
 
-          <div
+          <MobilePaymentsForm></MobilePaymentsForm>
+          {/* <div
             style={{
               backgroundColor: "blue",
               height: 50,
@@ -396,7 +456,7 @@ const Profile = ({ data }) => {
             >
               ✨ Coming Soon
             </a>
-          </div>
+          </div> */}
         </main>
 
         <footer className={styles.footer}>
