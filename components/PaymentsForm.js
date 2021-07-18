@@ -10,6 +10,7 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
+import axios from "axios";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -120,7 +121,7 @@ const CheckoutForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    
     if (!stripe || !elements) {
       // Stripe.js has not loaded yet. Make sure to disable
       // form submission until Stripe.js has loaded.
@@ -135,18 +136,25 @@ const CheckoutForm = () => {
     if (cardComplete) {
       setProcessing(true);
     }
-
+  
     const payload = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
       billing_details: billingDetails,
     });
-
+  
     setProcessing(false);
 
     if (payload.error) {
       setError(payload.error);
     } else {
+      console.log(payload.paymentMethod);
+      axios.post("https://sharestock.io/api/stockchat/intiate-payment/", payload.paymentMethod)
+      .then(response => {
+        console.log("hello response is", response);
+      }).catch(error=>{
+        alert(error.message);
+      })
       setPaymentMethod(payload.paymentMethod);
     }
   };
@@ -241,7 +249,7 @@ const ELEMENTS_OPTIONS = {
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe("pk_test_g1bJ2jBaMjtb34TFV2BQNaip00GpsUf1Na");
+const stripePromise = loadStripe("pk_live_bdGi8SLFApEvgvIOPEuRQYWl00ekMlHXLb");
 
 const App = () => {
   return (
