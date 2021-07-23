@@ -231,7 +231,7 @@ export default function Home() {
           </a>
         </main>
 
-        <div style={{ justifyContent: "flex-end", alignSelf: "flex-end" }}>
+        {/* <div style={{ justifyContent: "flex-end", alignSelf: "flex-end" }}>
           <div
             style={{
               backgroundColor: "blue",
@@ -261,7 +261,7 @@ export default function Home() {
               💬
             </a>
           </div>
-        </div>
+        </div> */}
 
         <footer className={styles.footer}>
           <a
