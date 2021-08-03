@@ -1,0 +1,7 @@
+
+
+###STOCKCHAT
+
+1. Sign In Button below paywall
+2. Sentiment indicator on notifications
+3. 

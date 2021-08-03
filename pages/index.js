@@ -67,6 +67,7 @@ export default function Home() {
             style={{
               flexDirection: "row",
               display: "flex",
+
               justifyContent: "center",
               alignItems: "center",
             }}
@@ -195,10 +196,10 @@ export default function Home() {
           <p
             style={{
               color: "#FFF",
-              fontSize: 60,
+              fontSize: 30,
               fontFamily: "monospace",
               marginBottom: 50,
-              textAlign: "center",
+              textAlign: "left",
               fontWeight: 800,
             }}
           >

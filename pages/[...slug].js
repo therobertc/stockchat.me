@@ -255,7 +255,7 @@ const Profile = ({ data }) => {
               color: "#FFF",
               fontSize: 30,
               fontFamily: "monospace",
-              marginBottom: 50,
+
               flex: 1,
 
               fontWeight: 800,
@@ -264,9 +264,69 @@ const Profile = ({ data }) => {
             @{data.data ? data.data.username : ""}
           </p>
 
-          <PaymentsForm></PaymentsForm>
+          <div
+            style={{
+              flexDirection: "row",
+              flex: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <p
+                style={{
+                  color: "#FFF",
+                  fontSize: 20,
+                  fontFamily: "monospace",
 
-          {/* <div
+                  flex: 1,
+
+                  fontWeight: 600,
+                }}
+              >
+                Subscribe to
+              </p>
+            </div>
+
+            <div>
+              <p
+                style={{
+                  color: "#FFF",
+                  fontSize: 25,
+                  fontFamily: "monospace",
+                  marginRight: 20,
+                  marginLeft: 20,
+                  //marginBottom: 50,
+                  //flex: 1,
+
+                  fontWeight: 800,
+                }}
+              >
+                @{data.data ? data.data.username : ""}
+              </p>
+            </div>
+
+            <div>
+              <p
+                style={{
+                  color: "#FFF",
+                  fontSize: 20,
+                  fontFamily: "monospace",
+
+                  flex: 1,
+
+                  fontWeight: 600,
+                }}
+              >
+                on StockChat
+              </p>
+            </div>
+          </div>
+
+          {/* <PaymentsForm></PaymentsForm> */}
+
+          <div
             style={{
               backgroundColor: "blue",
               height: 50,
@@ -293,7 +353,7 @@ const Profile = ({ data }) => {
             >
               ✨ Subscribe
             </a>
-          </div> */}
+          </div>
         </main>
         <footer className={styles.footer}>
           <a
@@ -310,126 +370,93 @@ const Profile = ({ data }) => {
         <main className={styles.main}>
           <img width={250} height={50} src="../logotext.png" alt="next" />
 
-          <img
-            width={80}
-            height={80}
-            style={{ borderRadius: 40, marginTop: 20 }}
-            src={data.data ? data.data.profile_image : ""}
-            alt="next"
-          />
+          <div style={{ marginTop: 20 }}>
+            <img
+              width={80}
+              height={80}
+              style={{ borderRadius: 40, marginTop: 20 }}
+              src={data.data ? data.data.profile_image : ""}
+              alt="next"
+            />
 
-          <p
-            style={{
-              color: "#FFF",
-              fontSize: 30,
-              fontFamily: "monospace",
-              marginBottom: 20,
-              //flex: 1,
-
-              fontWeight: 800,
-            }}
-          >
-            @{data.data ? data.data.username : ""}
-          </p>
-
-          {/* <div
-            style={{
-              width: 250,
-              height: 100,
-              borderRadius: 25,
-              borderColor: "#FFF",
-              borderWidth: 1,
-              backgroundColor: "#FFF",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: 10,
-              borderColor: "blue",
-              borderWidth: 2,
-            }}
-          >
             <p
               style={{
-                textAlign: "center",
-                fontSize: 20,
-                lineHeight: 0.1,
-                fontFamily: "monospace",
-              }}
-            >
-              Tier 1
-            </p>
-            <p style={{ textAlign: "center", fontSize: 30, lineHeight: 0.1 }}>
-              {" "}
-              💬 💸 💎 🙌{" "}
-            </p>
-          </div> */}
-
-          {/* <div
-            style={{
-              width: 250,
-              height: 100,
-              borderRadius: 25,
-              borderColor: "#FFF",
-              borderWidth: 1,
-              backgroundColor: "#FFF",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: 10,
-            }}
-          >
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: 20,
-                lineHeight: 0.1,
-                fontFamily: "monospace",
-              }}
-            >
-              Tier 2
-            </p>
-            <p
-              style={{
-                textAlign: "center",
+                color: "#FFF",
                 fontSize: 30,
-                lineHeight: 0.1,
                 fontFamily: "monospace",
+                marginBottom: 20,
+                //flex: 1,
+
+                fontWeight: 800,
               }}
             >
-              {" "}
-              💬 💸 💎 🙌{" "}
+              @{data.data ? data.data.username : ""}
             </p>
-          </div> */}
+          </div>
 
-          {/* <div
+          <div
             style={{
-              width: 250,
-              height: 100,
-              borderRadius: 25,
-              borderColor: "#FFF",
-              borderWidth: 1,
-              backgroundColor: "#FFF",
-              justifyContent: "center",
+              flexDirection: "row",
+              //flex: 1,
+              display: "flex",
+              justifyContent: "flex-start",
               alignItems: "center",
-              margin: 10,
             }}
           >
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: 20,
-                lineHeight: 0.1,
-                fontFamily: "monospace",
-              }}
-            >
-              Tier 3
-            </p>
-            <p style={{ textAlign: "center", fontSize: 30, lineHeight: 0.1 }}>
-              {" "}
-              💬 💸 💎 🙌{" "}
-            </p>
-          </div> */}
+            <div>
+              <p
+                style={{
+                  color: "#FFF",
+                  fontSize: 14,
+                  fontFamily: "monospace",
 
-          <MobilePaymentsForm></MobilePaymentsForm>
-          {/* <div
+                  flex: 1,
+
+                  fontWeight: 600,
+                }}
+              >
+                Subscribe to
+              </p>
+            </div>
+
+            <div>
+              <p
+                style={{
+                  color: "#FFF",
+                  fontSize: 16,
+                  fontFamily: "monospace",
+                  marginRight: 10,
+                  marginLeft: 10,
+                  //marginBottom: 50,
+                  //flex: 1,
+
+                  fontWeight: 800,
+                }}
+              >
+                @{data.data ? data.data.username : ""}
+              </p>
+            </div>
+
+            <div>
+              <p
+                style={{
+                  color: "#FFF",
+                  fontSize: 14,
+                  fontFamily: "monospace",
+
+                  flex: 1,
+
+                  fontWeight: 600,
+                }}
+              >
+                on StockChat
+              </p>
+            </div>
+          </div>
+
+          {/* <MobilePaymentsForm></MobilePaymentsForm> */}
+
+          <div
             style={{
               backgroundColor: "blue",
               height: 50,
@@ -437,10 +464,8 @@ const Profile = ({ data }) => {
               borderRadius: 25,
               justifyContent: "center",
               alignItems: "center",
-              //flex: 1,
               display: "flex",
-              margin: 10,
-              padding: 20,
+              marginTop: 30,
             }}
           >
             <a
@@ -450,13 +475,14 @@ const Profile = ({ data }) => {
               style={{
                 fontWeight: 600,
                 fontSize: 20,
+                textAlign: "center",
 
                 color: "#FFF",
               }}
             >
-              ✨ Coming Soon
+              ✨ Subscribe
             </a>
-          </div> */}
+          </div>
         </main>
 
         <footer className={styles.footer}>
