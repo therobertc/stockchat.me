@@ -2,9 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
-import { ReactElement } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -49,54 +46,67 @@ export default function Home() {
 
       <Desktop>
         <main className={styles.main}>
-          <div
+          <img width={300} height={80} src="../logotext.png" alt="next" />
+
+          <p
             style={{
-              flex: 1,
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              alignItems: "center",
+              color: "#FFF",
+              fontSize: 40,
+              fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+              //marginBottom: 50,
+              textAlign: "center",
+              fontWeight: 800,
             }}
           >
-            <img width={250} height={70} src="../logotext.png" alt="next" />
+            Start a group chat, send market updates, get paid.
+          </p>
 
-            <p
-              style={{
-                color: "#FFF",
-                fontSize: 30,
-                fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-                //marginBottom: 50,
-                textAlign: "center",
-                fontWeight: 800,
-              }}
-            >
-              Create a group chat, send market updates, get paid.
-            </p>
+          <form className={styles.linkform}>
+            <span style={{ color: "#000", fontWeight: 500 }}>
+              stockchat.me/
+            </span>
+            {/* <span style={{ color: "#000" }}>your name here</span> */}
+            <input
+              type="email"
+              className={styles.linkfeild}
+              maxlength="17"
+              name="email"
+              data-name="Email"
+              placeholder="yournamehere"
+              id="email"
+              required=""
+            />
+            <input
+              type="submit"
+              value=">"
+              data-wait="Get Started"
+              className={styles.linksubmit}
+            />
+          </form>
 
-            <form className={styles.linkform}>
-              <span style={{ color: "#000", fontWeight: 500 }}>
-                stockchat.me/
-              </span>
-              {/* <span style={{ color: "#000" }}>your name here</span> */}
-              <input
-                type="email"
-                className={styles.linkfeild}
-                maxlength="17"
-                name="email"
-                data-name="Email"
-                placeholder="username"
-                id="email"
-                required=""
-              />
-              <a
-                type="submit"
-                value=">"
-                href="/auth"
-                // data-wait="Get Started"
-                className={styles.linksubmit}
-              ></a>
-            </form>
-          </div>
+          {/* <form
+            // id="wf-form-PR-Email-Form"
+            // name="wf-form-PR-Email-Form"
+            // data-name="PR Email Form"
+            className={styles.form}
+          >
+            <input
+              type="email"
+              className={styles.textfeild}
+              maxlength="256"
+              name="email"
+              data-name="Email"
+              placeholder="Email"
+              id="email"
+              required=""
+            />
+            <input
+              type="submit"
+              value="Get Started"
+              data-wait="Get Started"
+              className={styles.submit}
+            />
+          </form> */}
 
           {/* <a
             href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
@@ -135,54 +145,77 @@ export default function Home() {
       </Desktop>
       <Mobile>
         <main className={styles.main}>
-          <div
+          <img width={250} height={70} src="../logotext.png" alt="next" />
+
+          <p
             style={{
-              flex: 1,
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              alignItems: "center",
+              color: "#FFF",
+              fontSize: 30,
+              fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+              //marginBottom: 50,
+              textAlign: "center",
+              fontWeight: 800,
             }}
           >
-            <img width={250} height={70} src="../logotext.png" alt="next" />
+            Let's create your group.
+          </p>
 
-            <p
-              style={{
-                color: "#FFF",
-                fontSize: 30,
-                fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-                //marginBottom: 50,
-                textAlign: "center",
-                fontWeight: 800,
-              }}
-            >
-              Create a group chat, send market updates, get paid.
-            </p>
+          <form className={styles.groupform}>
+            <input
+              type="username"
+              className={styles.groupfeild}
+              maxlength="17"
+              name="groupname"
+              data-name="Email"
+              placeholder="groupname"
+              id="email"
+              required=""
+            />
 
-            <form className={styles.linkform}>
-              <span style={{ color: "#000", fontWeight: 500 }}>
-                stockchat.me/
-              </span>
-              {/* <span style={{ color: "#000" }}>your name here</span> */}
-              <input
-                type="email"
-                className={styles.linkfeild}
-                maxlength="17"
-                name="email"
-                data-name="Email"
-                placeholder="username"
-                id="email"
-                required=""
-              />
-              <a
-                type="submit"
-                value=">"
-                href="/auth"
-                // data-wait="Get Started"
-                className={styles.linksubmit}
-              ></a>
-            </form>
-          </div>
+            <input
+              type="username"
+              className={styles.groupfeild}
+              maxlength="5"
+              name="email"
+              data-name="Email"
+              placeholder="ticker"
+              id="email"
+              required=""
+            />
+            <input
+              type="text"
+              className={styles.groupfeild}
+              maxlength="17"
+              name="email"
+              data-name="Email"
+              placeholder="bio"
+              id="email"
+              required=""
+            />
+          </form>
+
+          <a
+            style={{
+              backgroundColor: "#147efb",
+              borderRadius: 25,
+              padding: 20,
+              textAlign: "center",
+              width: 320,
+              margin: 30,
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 0,
+                height: 4,
+              },
+              shadowOpacity: 0.5,
+              shadowRadius: 5.46,
+              elevation: 9,
+              fontSize: 22,
+            }}
+            href="/pass"
+          >
+            Create Group
+          </a>
 
           {/* <a
             href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
@@ -208,6 +241,7 @@ export default function Home() {
             </div>
           </a> */}
         </main>
+
         <footer className={styles.footer}>
           <a
             href="https://twitter.com/stockchatme"

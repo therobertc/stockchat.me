@@ -49,6 +49,8 @@ export default function Home() {
 
       <Desktop>
         <main className={styles.main}>
+          <img width={250} height={70} src="../logotext.png" alt="next" />
+
           <div
             style={{
               flex: 1,
@@ -58,8 +60,6 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <img width={250} height={70} src="../logotext.png" alt="next" />
-
             <p
               style={{
                 color: "#FFF",
@@ -70,15 +70,15 @@ export default function Home() {
                 fontWeight: 800,
               }}
             >
-              Create a group chat, send market updates, get paid.
+              Welcome to your Dashboard.
             </p>
 
-            <form className={styles.linkform}>
+            {/* <form className={styles.linkform}>
               <span style={{ color: "#000", fontWeight: 500 }}>
                 stockchat.me/
               </span>
               {/* <span style={{ color: "#000" }}>your name here</span> */}
-              <input
+            {/* <input
                 type="email"
                 className={styles.linkfeild}
                 maxlength="17"
@@ -95,7 +95,31 @@ export default function Home() {
                 // data-wait="Get Started"
                 className={styles.linksubmit}
               ></a>
-            </form>
+            </form> */}
+
+            <div style={{ flexDirection: "row", display: "flex" }}>
+              <div
+                style={{
+                  paddingLeft: 30,
+                  paddingRight: 30,
+                  backgroundColor: "#FFF",
+                  margin: 10,
+                }}
+              >
+                <p
+                  style={{
+                    color: "#000",
+                    fontSize: 30,
+                    fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+                    //marginBottom: 50,
+                    textAlign: "center",
+                    fontWeight: 800,
+                  }}
+                >
+                  +
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* <a
@@ -135,6 +159,8 @@ export default function Home() {
       </Desktop>
       <Mobile>
         <main className={styles.main}>
+          <img width={250} height={70} src="../logotext.png" alt="next" />
+
           <div
             style={{
               flex: 1,
@@ -144,8 +170,6 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <img width={250} height={70} src="../logotext.png" alt="next" />
-
             <p
               style={{
                 color: "#FFF",
@@ -156,15 +180,15 @@ export default function Home() {
                 fontWeight: 800,
               }}
             >
-              Create a group chat, send market updates, get paid.
+              Welcome to your Dashboard.
             </p>
 
-            <form className={styles.linkform}>
+            {/* <form className={styles.linkform}>
               <span style={{ color: "#000", fontWeight: 500 }}>
                 stockchat.me/
               </span>
               {/* <span style={{ color: "#000" }}>your name here</span> */}
-              <input
+            {/* <input
                 type="email"
                 className={styles.linkfeild}
                 maxlength="17"
@@ -181,7 +205,31 @@ export default function Home() {
                 // data-wait="Get Started"
                 className={styles.linksubmit}
               ></a>
-            </form>
+            </form> */}
+
+            <div style={{ flexDirection: "row", display: "flex" }}>
+              <div
+                style={{
+                  paddingLeft: 30,
+                  paddingRight: 30,
+                  backgroundColor: "#FFF",
+                  margin: 10,
+                }}
+              >
+                <p
+                  style={{
+                    color: "#000",
+                    fontSize: 30,
+                    fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+                    //marginBottom: 50,
+                    textAlign: "center",
+                    fontWeight: 800,
+                  }}
+                >
+                  +
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* <a

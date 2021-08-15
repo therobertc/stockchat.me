@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  /* padding: 0 0.5rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,6 +18,186 @@
 
   /* align-items: center; */
   height: 100vh;
+}
+
+.form {
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  box-shadow: 0 1px 8px 1px rgb(0 0 0 / 10%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.linkform {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+  box-shadow: 0 1px 8px 1px rgb(0 0 0 / 10%);
+
+  transition: 0.2s;
+  flex-direction: row;
+  margin-top: 30px;
+  background-color: #fff;
+  font-size: 2.5vh;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 30px;
+  max-width: 320px;
+  padding-left: 10px;
+}
+
+.groupform {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+  box-shadow: 0 1px 8px 1px rgb(0 0 0 / 10%);
+
+  transition: 0.2s;
+  flex-direction: column;
+  margin-top: 30px;
+  /* background-color: #fff; */
+  font-size: 2.5vh;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 30px;
+  max-width: 320px;
+  padding-left: 10px;
+}
+
+.groupfeild {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+  box-shadow: 0 1px 8px 1px rgb(0 0 0 / 10%);
+
+  transition: 0.2s;
+  flex-direction: column;
+  margin-top: 30px;
+  /* background-color: #fff; */
+  font-size: 2.5vh;
+  font-weight: 700;
+  padding: 20px;
+  border-radius: 30px;
+  min-width: 320px;
+  padding-left: 10px;
+
+  /* border: 1px #000; */
+  margin-top: 20px;
+  border-radius: 10;
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+
+.linkfeild {
+  max-width: 120px;
+
+  /* border: 1px #000; */
+  border-radius: 0;
+  font-size: 2.5vh;
+  font-weight: 500;
+}
+
+.linksubmit {
+  /* padding-right: 3vh;
+  padding-left: 3vh; */
+  background-color: #147efb;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 2.5vh;
+  display: inline-block;
+  font-weight: 700;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  color: #fff;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+}
+
+.groupsubmit {
+  /* padding-right: 3vh;
+  padding-left: 3vh; */
+  background-color: #147efb;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 2.5vh;
+
+  font-weight: 700;
+  height: 60px;
+  width: 230px;
+  border-radius: 30px;
+  color: #fff;
+  border: 0;
+  /* line-height: inherit; */
+  text-decoration: none;
+  cursor: pointer;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.textfeild {
+  min-width: 200px;
+
+  border-radius: 0;
+  font-size: 2.5vh;
+  font-weight: 700;
+}
+
+.submit {
+  padding-right: 3vh;
+  padding-left: 3vh;
+  background-color: #0ca707;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 3vh;
+  display: inline-block;
+  padding: 2vh;
+  font-weight: 700;
+
+  color: #fff;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+}
+
+.w-input,
+.w-select {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #ccc;
 }
 
 .main {
@@ -41,6 +221,9 @@
 .footer {
   width: 100%;
   height: 100px;
+  flex-direction: column;
+  margin-bottom: 20px;
+
   /* border-top: 1px solid #eaeaea; */
   display: flex;
   justify-content: center;
@@ -52,6 +235,7 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  font-size: 14px;
 }
 
 .title a {
@@ -180,7 +364,7 @@
     color: "#FFF";
   }
 
-  .main {
+  /* .main {
     padding: 10px;
     flex: 1;
     display: flex;
@@ -189,7 +373,7 @@
     align-items: top;
     width: 100%;
     background-color: "#000";
-  }
+  } */
 
   .menu {
     font-weight: 500;

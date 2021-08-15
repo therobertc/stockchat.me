@@ -2,9 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
-import { ReactElement } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 });
@@ -70,35 +67,29 @@ export default function Home() {
                 fontWeight: 800,
               }}
             >
-              Create a group chat, send market updates, get paid.
+              Enter your email
             </p>
 
             <form className={styles.linkform}>
-              <span style={{ color: "#000", fontWeight: 500 }}>
-                stockchat.me/
-              </span>
-              {/* <span style={{ color: "#000" }}>your name here</span> */}
               <input
                 type="email"
-                className={styles.linkfeild}
+                className={styles.textfeild}
                 maxlength="17"
                 name="email"
                 data-name="Email"
-                placeholder="username"
+                placeholder="Email"
                 id="email"
                 required=""
               />
               <a
                 type="submit"
                 value=">"
-                href="/auth"
+                href="/pass"
                 // data-wait="Get Started"
                 className={styles.linksubmit}
               ></a>
             </form>
-          </div>
-
-          {/* <a
+            {/* <a
             href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
             target="_blank"
             rel="noopener noreferrer"
@@ -121,6 +112,7 @@ export default function Home() {
               <img src="../app-store-button.svg" alt="next" />
             </div>
           </a> */}
+          </div>
         </main>
         <footer className={styles.footer}>
           <a
@@ -156,35 +148,29 @@ export default function Home() {
                 fontWeight: 800,
               }}
             >
-              Create a group chat, send market updates, get paid.
+              Enter your email
             </p>
 
             <form className={styles.linkform}>
-              <span style={{ color: "#000", fontWeight: 500 }}>
-                stockchat.me/
-              </span>
-              {/* <span style={{ color: "#000" }}>your name here</span> */}
               <input
                 type="email"
-                className={styles.linkfeild}
+                className={styles.textfeild}
                 maxlength="17"
                 name="email"
                 data-name="Email"
-                placeholder="username"
+                placeholder="Email"
                 id="email"
                 required=""
               />
               <a
                 type="submit"
                 value=">"
-                href="/auth"
+                href="/pass"
                 // data-wait="Get Started"
                 className={styles.linksubmit}
               ></a>
             </form>
-          </div>
-
-          {/* <a
+            {/* <a
             href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
             target="_blank"
             rel="noopener noreferrer"
@@ -207,7 +193,9 @@ export default function Home() {
               <img src="../app-store-button.svg" alt="next" />
             </div>
           </a> */}
+          </div>
         </main>
+
         <footer className={styles.footer}>
           <a
             href="https://twitter.com/stockchatme"

@@ -14,6 +14,8 @@ import {
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
+import Screener from "../components/Screener";
+
 import PaymentsForm from "../components/PaymentsForm";
 import MobilePaymentsForm from "../components/MobilePaymentsForm";
 
@@ -196,7 +198,7 @@ const Profile = ({ data }) => {
       <Desktop>
         <div
           style={{
-            justifyContent: "space-between",
+            //justifyContent: "space-between",
             flexDirection: "row",
             display: "flex",
             flex: 1,
@@ -240,141 +242,21 @@ const Profile = ({ data }) => {
         </div>
 
         <main className={styles.main}>
-          <img width={250} height={50} src="../logotext.png" alt="next" />
-
-          <img
-            width={80}
-            height={80}
-            style={{ borderRadius: 40, marginTop: 10 }}
-            src={data.data ? data.data.profile_image : ""}
-            alt="next"
-          />
-
-          <p
-            style={{
-              color: "#FFF",
-              fontSize: 30,
-              fontFamily: "monospace",
-
-              flex: 1,
-
-              fontWeight: 800,
-            }}
-          >
-            @{data.data ? data.data.username : ""}
-          </p>
-
+          {/* <img width={250} height={50} src="../logotext.png" alt="next" /> */}
           <div
             style={{
-              flexDirection: "row",
               flex: 1,
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "start",
             }}
           >
-            <div>
-              <p
-                style={{
-                  color: "#FFF",
-                  fontSize: 20,
-                  fontFamily: "monospace",
-
-                  flex: 1,
-
-                  fontWeight: 600,
-                }}
-              >
-                Subscribe to
-              </p>
-            </div>
-
-            <div>
-              <p
-                style={{
-                  color: "#FFF",
-                  fontSize: 25,
-                  fontFamily: "monospace",
-                  marginRight: 20,
-                  marginLeft: 20,
-                  //marginBottom: 50,
-                  //flex: 1,
-
-                  fontWeight: 800,
-                }}
-              >
-                @{data.data ? data.data.username : ""}
-              </p>
-            </div>
-
-            <div>
-              <p
-                style={{
-                  color: "#FFF",
-                  fontSize: 20,
-                  fontFamily: "monospace",
-
-                  flex: 1,
-
-                  fontWeight: 600,
-                }}
-              >
-                on StockChat
-              </p>
-            </div>
-          </div>
-
-          {/* <PaymentsForm></PaymentsForm> */}
-
-          <div
-            style={{
-              backgroundColor: "blue",
-              height: 50,
-              width: 250,
-              borderRadius: 25,
-              justifyContent: "center",
-              alignItems: "center",
-              flex: 1,
-              display: "flex",
-              margin: 10,
-              padding: 20,
-            }}
-          >
-            <a
-              href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontWeight: 600,
-                fontSize: 20,
-
-                color: "#FFF",
-              }}
-            >
-              ✨ Subscribe
-            </a>
-          </div>
-        </main>
-        <footer className={styles.footer}>
-          <a
-            href="https://twitter.com/stockchatme"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ fontWeight: 500, color: "lightgrey" }}
-          >
-            © StockChat
-          </a>
-        </footer>
-      </Desktop>
-      <Mobile>
-        <main className={styles.main}>
-          <img width={250} height={50} src="../logotext.png" alt="next" />
-
-          <div style={{ marginTop: 20 }}>
             <img
               width={80}
               height={80}
-              style={{ borderRadius: 40, marginTop: 20 }}
+              style={{ borderRadius: 40, marginTop: 10 }}
               src={data.data ? data.data.profile_image : ""}
               alt="next"
             />
@@ -384,78 +266,108 @@ const Profile = ({ data }) => {
                 color: "#FFF",
                 fontSize: 30,
                 fontFamily: "monospace",
-                marginBottom: 20,
-                //flex: 1,
+
+                flex: 1,
 
                 fontWeight: 800,
               }}
             >
               @{data.data ? data.data.username : ""}
             </p>
-          </div>
 
-          <div
-            style={{
-              flexDirection: "row",
-              //flex: 1,
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <p
+            <div
+              style={{
+                flexDirection: "row",
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div>
+                <p
+                  style={{
+                    color: "#FFF",
+                    fontSize: 20,
+                    fontFamily: "monospace",
+
+                    flex: 1,
+
+                    fontWeight: 600,
+                  }}
+                >
+                  Subscribe to
+                </p>
+              </div>
+
+              <div>
+                <p
+                  style={{
+                    color: "#FFF",
+                    fontSize: 25,
+                    fontFamily: "monospace",
+                    marginRight: 20,
+                    marginLeft: 20,
+                    //marginBottom: 50,
+                    //flex: 1,
+
+                    fontWeight: 800,
+                  }}
+                >
+                  @{data.data ? data.data.username : ""}
+                </p>
+              </div>
+
+              <div>
+                <p
+                  style={{
+                    color: "#FFF",
+                    fontSize: 20,
+                    fontFamily: "monospace",
+
+                    flex: 1,
+
+                    fontWeight: 600,
+                  }}
+                >
+                  on StockChat
+                </p>
+              </div>
+            </div>
+
+            {/* <PaymentsForm></PaymentsForm> */}
+
+            {/* <div
+              style={{
+                backgroundColor: "blue",
+                height: 50,
+                width: 250,
+                borderRadius: 25,
+                justifyContent: "center",
+                alignItems: "center",
+                flex: 1,
+                display: "flex",
+                margin: 10,
+                padding: 20,
+              }}
+            >
+              <a
+                href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
-                  color: "#FFF",
-                  fontSize: 14,
-                  fontFamily: "monospace",
-
-                  flex: 1,
-
                   fontWeight: 600,
-                }}
-              >
-                Subscribe to
-              </p>
-            </div>
+                  fontSize: 20,
 
-            <div>
-              <p
-                style={{
                   color: "#FFF",
-                  fontSize: 16,
-                  fontFamily: "monospace",
-                  marginRight: 10,
-                  marginLeft: 10,
-                  //marginBottom: 50,
-                  //flex: 1,
-
-                  fontWeight: 800,
                 }}
               >
-                @{data.data ? data.data.username : ""}
-              </p>
-            </div>
-
-            <div>
-              <p
-                style={{
-                  color: "#FFF",
-                  fontSize: 14,
-                  fontFamily: "monospace",
-
-                  flex: 1,
-
-                  fontWeight: 600,
-                }}
-              >
-                on StockChat
-              </p>
-            </div>
+                ✨ Subscribe
+              </a>
+            </div> */}
           </div>
-
-          {/* <MobilePaymentsForm></MobilePaymentsForm> */}
-
+        </main>
+        <footer className={styles.footer}>
           <div
             style={{
               backgroundColor: "blue",
@@ -466,6 +378,8 @@ const Profile = ({ data }) => {
               alignItems: "center",
               display: "flex",
               marginTop: 30,
+              marginBottom: 20,
+              padding: 20,
             }}
           >
             <a
@@ -483,17 +397,128 @@ const Profile = ({ data }) => {
               ✨ Subscribe
             </a>
           </div>
-        </main>
 
-        <footer className={styles.footer}>
-          {/* <a
+          <a
             href="https://twitter.com/stockchatme"
             target="_blank"
             rel="noopener noreferrer"
             style={{ fontWeight: 500, color: "lightgrey" }}
           >
-            © StockChat
-          </a> */}
+            © 2021 Stock Software, Inc. All Rights Reserved.
+          </a>
+        </footer>
+      </Desktop>
+      <Mobile>
+        <footer className={styles.footer}>
+          <img width={250} height={50} src="../logotext.png" alt="next" />
+        </footer>
+        <img
+          width={80}
+          height={80}
+          style={{ borderRadius: 40, marginTop: 20 }}
+          src={data.data ? data.data.profile_image : ""}
+          alt="next"
+        />
+        <div style={{ marginTop: 20 }}>
+          <p
+            style={{
+              color: "#FFF",
+              fontSize: 30,
+              fontFamily: "monospace",
+              //marginBottom: 20,
+              //flex: 1,
+
+              fontWeight: 800,
+            }}
+          >
+            @{data.data ? data.data.username : ""}
+          </p>
+        </div>
+
+        {/* <Screener></Screener> */}
+
+        <main className={styles.main}>
+          {/* <Screener></Screener> */}
+
+          <div
+            style={{
+              height: 100,
+              width: "80%",
+              borderRadius: 20,
+              backgroundColor: "#000",
+              marginRight: 100,
+              marginLeft: 100,
+              justifyContent: "center",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <a
+              href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: "#FFF",
+                borderRadius: 20,
+                padding: 0.5,
+                margin: 30,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.5,
+                shadowRadius: 5.46,
+                elevation: 9,
+              }}
+            >
+              <div>
+                <img src="../app-store-button.svg" alt="next" />
+              </div>
+            </a>
+          </div>
+          {/* <MobilePaymentsForm></MobilePaymentsForm> */}
+        </main>
+
+        <footer className={styles.footer}>
+          {/* <div
+            style={{
+              backgroundColor: "blue",
+              height: 50,
+              width: 250,
+              borderRadius: 25,
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+              marginTop: 30,
+              marginBottom: 20,
+              padding: 20,
+            }}
+          >
+            <a
+              href="https://apps.apple.com/us/app/stock-chat-group-messaging/id1464257050"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontWeight: 600,
+                fontSize: 20,
+                textAlign: "center",
+
+                color: "#FFF",
+              }}
+            >
+              ✨ Subscribe
+            </a>
+          </div> */}
+
+          <a
+            href="https://twitter.com/stockchatme"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontWeight: 500, color: "lightgrey" }}
+          >
+            © 2021 Stock Software, Inc. All Rights Reserved.
+          </a>
         </footer>
       </Mobile>
     </div>
