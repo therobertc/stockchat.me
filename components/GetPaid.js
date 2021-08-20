@@ -30,7 +30,7 @@ export default function Home() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        //height: "100vh",
         backgroundColor: "#000",
       }}
     >
