@@ -55,30 +55,31 @@ class WSBTrends extends Component {
           }
         >
           <div
-            style={{
-              paddingTop: 10,
-              marginHorizontal: 10,
-              borderBottomColor: "#7c818c",
-              borderBottomWidth: 0.5,
-              //paddingLeft: 20,
-              borderWidth: "1px",
-              borderBottomStyle: "solid",
-              borderColor: "#60646C",
-              borderWidth: "1px",
-            }}
+          // style={{
+          //   paddingTop: 10,
+          //   marginHorizontal: 10,
+          //   borderBottomColor: "#7c818c",
+          //   borderBottomWidth: 0.5,
+          //   //paddingLeft: 20,
+          //   borderWidth: "1px",
+          //   borderBottomStyle: "solid",
+          //   borderColor: "#60646C",
+          //   borderWidth: "1px",
+          // }}
           >
             <div
               style={{
                 flexDirection: "row",
                 paddingBottom: 5,
                 display: "flex",
+                justifyContent: "space-between",
               }}
             >
               <p
                 style={{
                   fontWeight: "500",
                   fontSize: 18,
-                  color: "#FFF",
+                  color: "#000",
                   //textAlign: "center",
                   //   color:
                   //     parseFloat(service.changePercent) < 0
@@ -108,7 +109,7 @@ class WSBTrends extends Component {
                 style={{
                   fontWeight: "500",
                   fontSize: 18,
-                  color: "#FFF",
+                  color: "#000",
 
                   //textAlign: "center",
                   //   color:
@@ -117,16 +118,16 @@ class WSBTrends extends Component {
                   //       : "#33CC00"
                 }}
               >
-                to ${service.latestPrice}
+                ${service.latestPrice}
               </p>
             </div>
 
-            <p style={styles.stocktext}>
+            {/* <p style={styles.stocktext}>
               {service.companyName} was mentioned {service.count} times on
               WallStreetBets in the last 24 hours
-            </p>
+            </p> */}
 
-            <p
+            {/* <p
               style={{
                 fontWeight: "400",
                 fontSize: 16,
@@ -136,7 +137,7 @@ class WSBTrends extends Component {
               }}
             >
               WSB Trends by Stock Chat
-            </p>
+            </p> */}
           </div>
         </div>
       ));
@@ -148,7 +149,7 @@ class WSBTrends extends Component {
       <div style={styles.container}>
         <div
           //horizontal={true}
-          style={{ overflowY: "scroll", height: 400 }}
+          style={{ overflowY: "scroll", height: 450 }}
           showsHorizontalScrollIndicator={false}
         >
           {this.TrendingComponent()}
@@ -162,11 +163,10 @@ export default WSBTrends;
 
 const styles = {
   container: {
-    paddingVertical: 10,
-
+    //paddingVertical: 10,
     //backgroundColor: "#282c34",
-
     //marginLeft: 20
+    flex: 1,
   },
   text: {
     marginHorizontal: 8,

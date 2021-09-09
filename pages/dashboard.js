@@ -106,18 +106,31 @@ export default function Home() {
                   margin: 10,
                 }}
               >
-                <p
+                <a
+                  type="submit"
+                  value=">"
+                  href="/connect"
+                  // data-wait="Get Started"
+                  //className={styles.linksubmit}
+
                   style={{
-                    color: "#000",
-                    fontSize: 30,
-                    fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-                    //marginBottom: 50,
-                    textAlign: "center",
-                    fontWeight: 800,
+                    backgroundColor: "#000",
+                    height: 50,
                   }}
                 >
-                  +
-                </p>
+                  <p
+                    style={{
+                      color: "#000",
+                      fontSize: 30,
+                      fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
+                      //marginBottom: 50,
+                      textAlign: "center",
+                      fontWeight: 800,
+                    }}
+                  >
+                    +
+                  </p>
+                </a>
               </div>
             </div>
           </div>

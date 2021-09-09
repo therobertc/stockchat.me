@@ -20,6 +20,7 @@ class StockAlerts extends Component {
 
   _getManualNotification = () => {
     let url = "https://sharestock.io/api/getAllNotification/?type=1";
+    //let url = "https://sharestock.io/api/stock-tweet-sentiment/?symbol=$FEED&token=b376a1a3a017c9e885885507a3b7b9554224da41"
     axios.get(url).then((response) => {
       this.setState({ post_data: response.data.data, isLoading: false });
     });
@@ -48,9 +49,8 @@ class StockAlerts extends Component {
             >
               <div
                 style={{
-                  flexDirection: "column",
+                  flexDirection: "row",
                   justifyContent: "space-between",
-                  padding: 5,
                 }}
               >
                 <div
@@ -61,7 +61,7 @@ class StockAlerts extends Component {
                   }}
                 >
                   <span
-                    style={{ color: "#FFF", fontWeight: "bold", fontSize: 16 }}
+                    style={{ color: "#000", fontWeight: "bold", fontSize: 16 }}
                   >
                     {data.title}
                   </span>
@@ -70,10 +70,72 @@ class StockAlerts extends Component {
                   >
                     · {moment(new Date(data.dateTime)).fromNow()}
                   </span>
+
+                  <div
+                    style={{
+                      // width: 500,
+                      flex: 1,
+                      //backgroundColor: "#000",
+
+                      marginLeft: 50,
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontWeight: "bold",
+                        fontSize: 16,
+                        marginRight: 20,
+                        backgroundColor: "#147efb",
+                        padding: 3,
+                        borderRadius: 10,
+                        height: 50,
+                        width: 50,
+                      }}
+                    >
+                      👍
+                    </span>
+                    <span
+                      style={{
+                        color: "#FFF",
+                        fontWeight: "bold",
+                        fontSize: 16,
+                        marginRight: 20,
+                        backgroundColor: "#147efb",
+                        padding: 3,
+                        borderRadius: 10,
+                      }}
+                    >
+                      👎
+                    </span>
+
+                    {/* <span
+                    style={{
+                      color: "#FFF",
+                      fontWeight: "bold",
+                      fontSize: 16,
+                      backgroundColor: "#147efb",
+                      padding: 8,
+                      borderRadius: 10,
+                    }}
+                  >
+                    GM
+                  </span> */}
+                  </div>
                 </div>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  // marginBottom: 10,
+                }}
+              >
                 <span
                   style={{
-                    color: "#FFF",
+                    color: "#000",
                     paddingTop: 5,
                     fontSize: 16,
                     textAlign: "left",
@@ -92,7 +154,14 @@ class StockAlerts extends Component {
   render() {
     return (
       <div
-        style={{ overflowY: "scroll", height: 400 }}
+        style={{
+          overflowY: "scroll",
+          height: 350,
+          backgroundColor: "#FFF",
+
+          padding: 10,
+          borderRadius: 20,
+        }}
         showsVerticalScrollIndicator={false}
       >
         {this._render_post_data()}
@@ -145,7 +214,7 @@ const styles = {
     marginTop: 15,
   },
   card: {
-    //backgroundColor: "#F5F8FA",
+    backgroundColor: "#FFF",
     shadowOffset: { width: 0.5, height: 0.5 },
     shadowColor: "#4b5162",
     //shadowOpacity: 2.0,
